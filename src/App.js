@@ -1,10 +1,10 @@
 import './App.css';
 import React from 'react';
-import { Chart as ChartJS } from 'chart.js/auto'
+import { Chart as ChartJS } from 'chart.js/auto' // note the /auto. This registers the stuff you import automatically
 import { Line, Chart } from 'react-chartjs-2';
 import annotationPlugin from "chartjs-plugin-annotation";
 
-// reg
+// register the annotation plugin against base ChartJS
 ChartJS.register(
   annotationPlugin
 );
@@ -48,6 +48,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div style={{ width: '50%', height: '50vh' }}>
+          {/* either of these will work */}
           <Chart type="line" data={data} options={options} />
           <Line data={data} options={options} />
         </div>
